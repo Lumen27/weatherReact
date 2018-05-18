@@ -7,7 +7,7 @@
     text-align:center;
 }
 
-.video-wrap {
+.videoWrap {
     position:absolute;
     top:0;
     left:0;
@@ -17,4 +17,9 @@
     z-index: 0;
     background:#eee;
     opacity:0.70;
+}
+
+video {
+    min-height:100%;
+    min-width:100%;
 }

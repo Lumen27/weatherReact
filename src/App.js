@@ -1,9 +1,8 @@
 import React, {Component} from 'react'
 import axios from 'axios'
-import {RenderContent} from './RenderContent'
-
 import './App.css'
-import {ChangeTemp} from "./ChangeTemp";
+import {RenderContent} from './RenderContent'
+import {ChangeTemp} from "./ChangeTemp"
 
 
 class App extends Component {
@@ -76,7 +75,8 @@ class App extends Component {
     return (
         <div className="container">
             <div className="videoWrap">
-
+                <video src={this.state.vidSrc} autoPlay loop muted>
+                </video>
             </div>
 
             <div className="content">
