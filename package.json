@@ -2,7 +2,7 @@
   "name": "weather",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://lumen27.github.io/weatherJS/",
+  "homepage": "https://lumen27.github.io/weatherReact/",
   "dependencies": {
     "axios": "^0.18.0",
     "gh-pages": "^1.1.0",
