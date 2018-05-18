@@ -1,23 +1,10 @@
-* {
-    padding: 0;
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight:normal;
-    line-height:1.5;
-    color:#333;
-}
-
-h1 {
-    font-size:50px;
-}
-
-p {
-    font-size:2rem;
-}
-
-video {
-    min-height:100%;
-    min-width:100%;
+.content {
+    z-index: 2;
+    position: absolute;
+    top: 33%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align:center;
 }
 
 .video-wrap {
@@ -31,13 +18,3 @@ video {
     background:#eee;
     opacity:0.70;
 }
-
-.content {
-    z-index: 2;
-    position: absolute;
-    top: 33%;
-    left:50%;
-    transform: translate(-50%,-50%);
-    text-align:center;
-}
-

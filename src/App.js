@@ -1,7 +1,10 @@
-import React, { Component } from 'react'
-import './App.css'
+import React, {Component} from 'react'
 import axios from 'axios'
-import {RenderAll} from './RenderAll'
+import {RenderContent} from './RenderContent'
+
+import './App.css'
+import {ChangeTemp} from "./ChangeTemp";
+
 
 class App extends Component {
     constructor(props) {
@@ -19,7 +22,24 @@ class App extends Component {
          tempUnit: "C",
          otherUnit: "F"
      };
-     this.changeTemp = this.changeTemp.bind(this);
+     this.handleClick = this.handleClick.bind(this)
+    }
+
+    handleClick() {
+        let newTempUnit = this.state.tempUnit;
+        if (newTempUnit === "F") {
+            this.setState({
+                tempUnit: "C",
+                currentTemp: this.state.tempC,
+                otherUnit: "F"
+            })
+        } else if (newTempUnit === "C") {
+            this.setState({
+                tempUnit: "F",
+                currentTemp: this.state.tempF,
+                otherUnit: "C"
+            })
+        }
     }
 
     getWeather() {
@@ -52,39 +72,27 @@ class App extends Component {
         });
     }
 
-
-    changeTemp() {
-        let newTempUnit = this.state.tempUnit;
-        if (newTempUnit === "F") {
-            this.setState({
-                tempUnit: "C",
-                currentTemp: this.state.tempC,
-                otherUnit: "F"
-            })
-        } else if (newTempUnit === "C") {
-            this.setState({
-                tempUnit: "F",
-                currentTemp: this.state.tempF,
-                otherUnit: "C"
-            })
-        }
-
-    }
-
-
-
-
   render() {
     return (
-        <RenderAll
-            city={this.state.city}
-            country={this.state.country}
-            currentTemp={this.state.currentTemp}
-            tempUnit={this.state.tempUnit}
-            condition={this.state.condition}
-            otherUnit={this.state.otherUnit}
-            vidSrc={this.state.vidSrc}
-        />
+        <div className="container">
+            <div className="videoWrap">
+
+            </div>
+
+            <div className="content">
+                <RenderContent
+                    city={this.state.city}
+                    country={this.state.country}
+                    currentTemp={this.state.currentTemp}
+                    tempUnit={this.state.tempUnit}
+                    condition={this.state.condition}
+                />
+                <ChangeTemp
+                    onClick={this.handleClick}
+                    otherUnit = {this.state.otherUnit}
+                />
+            </div>
+        </div>
     );
   }
 }
