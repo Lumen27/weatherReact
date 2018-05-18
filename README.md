@@ -1,3 +1,5 @@
-Simple Random Quotes made with React, Axios and Bootstrap.
+# Local Weather React
 
-Check it out at https://lumen27.github.io/quotes/
+Local Weather made with React and Axios.
+
+Check it out at https://lumen27.github.io/weatherReact
