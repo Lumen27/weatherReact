@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
 import axios from 'axios'
+import {RenderAll} from './RenderAll'
 
 class App extends Component {
     constructor(props) {
@@ -75,19 +76,15 @@ class App extends Component {
 
   render() {
     return (
-        <div className="container">
-                <div className="video-wrap">
-                    <video id="bgVid" src={this.state.vidSrc} autoPlay loop muted>
-                    </video>
-                </div>
-
-            <div className="content">
-                <h1>{this.state.city}, {this.state.country}</h1>
-                <p>{this.state.currentTemp}°{this.state.tempUnit}</p>
-                <p>{this.state.condition}</p>
-                <button onClick={this.changeTemp}>Change to {this.state.otherUnit}</button>
-            </div>
-        </div>
+        <RenderAll
+            city={this.state.city}
+            country={this.state.country}
+            currentTemp={this.state.currentTemp}
+            tempUnit={this.state.tempUnit}
+            condition={this.state.condition}
+            otherUnit={this.state.otherUnit}
+            vidSrc={this.state.vidSrc}
+        />
     );
   }
 }
