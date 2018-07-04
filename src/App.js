@@ -2,8 +2,6 @@ import React, {Component} from 'react'
 import axios from 'axios'
 import './App.css'
 import {RenderContent} from './RenderContent'
-import {ChangeTemp} from "./ChangeTemp"
-
 
 class App extends Component {
     constructor(props) {
@@ -80,17 +78,8 @@ class App extends Component {
             </div>
 
             <div className="content">
-                <RenderContent
-                    city={this.state.city}
-                    country={this.state.country}
-                    currentTemp={this.state.currentTemp}
-                    tempUnit={this.state.tempUnit}
-                    condition={this.state.condition}
-                />
-                <ChangeTemp
-                    onClick={this.handleClick}
-                    otherUnit = {this.state.otherUnit}
-                />
+                <RenderContent {...this.state} />
+                <button onClick={this.handleClick}>Change to °{this.state.otherUnit}</button>
             </div>
         </div>
     );
